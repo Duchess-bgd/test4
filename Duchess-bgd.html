@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+        <link  id="favicon" rel="shortcut icon" type="image/x-icon"  />
+		<title>Duchess-bgd</title>
+
+<style>
+
+html, body{ 
+	width:100%; height:100%;
+	margin:0; padding:0; 
+	}
+
+body *{ 
+	margin:0; padding:0; 
+	box-sizing:border-box;
+	}
+a{ text-decoration:none;  }
+ol, ul{ list-style-type:none; }
+body{padding-top:1px; }
+
+/*Meni i logo*/
+#Meni {z-index: 1000;
+	display: flex;
+	position:fixed;
+	width: 100%;
+	height: 70px;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+	background-color: black;
+	}
+#Logo {width:100px;
+	height: 70px;
+	}	
+
+.menu1 {display: grid;
+	grid-template-columns: repeat(4, 100px);
+	justify-content: center;
+	grid-column-gap:10px;
+	align-items: center;
+    background-color: rgb(0, 0, 0);
+	color: aliceblue;}
+
+.menuitem {
+	background-color: black;
+	padding: 10px;}
+
+.menuitem a {color: aliceblue; padding: 10px; 				
+}
+
+.menuitem a:hover {
+    background-color: rgb(50, 50, 50);
+	padding: 10px;
+}
+/*Prva sekcija: Home*/
+#Home {position: relative;
+		height: 56.25vw; 
+		align-items: center;
+		justify-content: center;
+		color:aliceblue;
+		margin-top: 70px;
+		}
+        
+#Duchess{z-index: -1;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+  transform: translate(0,-50%); 
+	font-size: 1.5vw;
+	text-shadow: 3px 3px 2px black;
+}
+
+#videoContainer {z-index: -1;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+								overflow: hidden;
+               	}
+
+#Video1 {z-index: -1;
+        position: absolute;
+				width: 100%;
+        }
+                
+
+#Home h1, #Home div p {line-height: 1;
+					text-align: center;}
+
+a:link, a:visited, a:hover, a:active{color:white;}
+
+#Join {z-index: 2;
+    border: 2px solid white;
+	width: 10vw;
+	margin: 0 auto;
+	padding: 5px;
+	text-align: center;
+	border-radius: 10px;
+	color:white;
+	}
+
+
+/*Treca sekcija: About*/
+
+#About{display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: rgb(10, 10, 10);
+	justify-items: center;
+	align-items: center;
+	}
+
+
+#bio {color: white;
+	padding:1.5vw;}
+
+#bio h2{padding: 1em;
+	font-size: 2vw;}
+
+#bio p {font-size: 1.4vw;
+		line-height: 1.5em;
+		}
+
+#b2 {
+	height:auto;
+	width: 50%;
+	border-radius: 50%;
+	}
+
+
+/*Druga sekcija Galerija*/
+.Gallery {
+  width: 100%;
+  height: 90%;
+}
+
+.gallery {margin-top: -9vw;
+	background-color: white;
+	border: 10px solid white;
+	width: 100%;
+	height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 10px; 
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; 
+}
+
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  /* grid-column: 1 / span 2;  */
+  /* grid-row: 1 / span 2; */
+}
+
+.gallery__item--2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery__item--3 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+.gallery__item--5 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+.gallery__item--6 {
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+.gallery__item--7 {
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 4;
+  grid-row-end: 9;
+}
+.gallery__item--8 {
+  grid-column-start: 9;
+  grid-column-end: 11;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+.gallery__item--9 {
+  grid-column-start: 11;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.gallery__item--10 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+	
+.opis{position: absolute;
+	
+
+background-color:rgb(243, 245, 247 ,0.5);
+font-size: 1.5vw;
+margin: 5px;
+padding: 4px;
+	}
+#slikaKorpa{width: 1em;
+height: 1em;}
+
+
+/*Poslednja sekcija kontakt*/
+#Contact { display:grid;
+	grid-auto-rows: 300px;
+	grid-template-columns: 1fr 1fr;
+	padding:30px;
+	color:aliceblue;
+	background-image: url("back.jpg");
+	background-size:cover;
+	font-size: 120%;
+	text-shadow: 5px 5px 3px black;
+	}	
+
+#podaci {justify-self: center;}
+
+
+		</style>
+    </head>
+    <body>  
+		<div id="Meni">
+			<img id="Logo" src="Logo.jpg" alt="Logo"></img>
+			<ul class=menu1>
+				<li class="menuitem"><a href="#Home">Home</a></li>
+				<li class="menuitem"><a href="#About">About</a></li>
+				<li class="menuitem"><a href="#Gallery">Gallery</a></li>
+				<li class="menuitem"><a href="#Contact">Contact</a></li>
+			</ul>		
+		</div>
+		<div id="Home">
+                <div id="videoContainer">
+                <video id="Video1" autoplay loop>
+					<source src="Video1.mp4" type="video/mp4">
+					
+                </video> 
+			<div id="Duchess">
+				<h1>Duchess</h1>
+				<br>
+				<p>Welcome to the fantasy gallery</p>
+				<br><br>
+				<p id="Join"><a href="#Gallery">Visit</a></p>
+			</div>
+				</div>		
+			</div>
+		
+		<div id="Gallery">
+            <div class="gallery">
+                <button id="s1" class="gallery__item gallery__item--1" >
+					<div class=opis>Pink Forest 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika1.jpg" alt="slika 1" class="gallery__img">
+                </button>
+                <button id="s2" class="gallery__item gallery__item--2">
+						<div class=opis>Red Sky 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika2.jpg" alt="slika 2" class="gallery__img">
+                </button>
+                <button id="s3" class="gallery__item gallery__item--3">
+						<div class=opis>Coffee Love 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika3.jpg" alt="slika 3" class="gallery__img">
+                </button>
+                <button id="s4" class="gallery__item gallery__item--4">
+						<div class=opis>Space Sanctuary 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika4.jpg" alt="slika 4" class="gallery__img">
+                </button>
+                <button id="s6"class="gallery__item gallery__item--5">
+						<div class=opis>Goth Portrait 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika5.jpg" alt="slika 5" class="gallery__img">
+                </button>
+                <button id="s6" class="gallery__item gallery__item--6">
+						<div class=opis>Halloween Cooking 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika6.jpg" alt="slika 6" class="gallery__img">
+				</button>
+				<button id="s7"class="gallery__item gallery__item--7">
+						<div class=opis>Moon Bath 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika7.jpg" alt="slika 7" class="gallery__img">
+				</button>
+				<button id="s8"class="gallery__item gallery__item--8">
+						<div class=opis>Dark Ruler 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika8.jpg" alt="slika 8" class="gallery__img">
+				</button>
+				<button id="s9"class="gallery__item gallery__item--9">
+						<div class=opis>Red Angel 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika9.jpg" alt="slika 9" class="gallery__img">
+				</button>
+				<button id="s10"class="gallery__item gallery__item--10">
+						<div class=opis>Forest Witch 5€ <img id=slikaKorpa src=korpa.png alt=korpa></div>
+                    <img src="img/slika10.jpg" alt="slika 10" class="gallery__img">
+                </button>
+            </div>
+		</div>
+		<div id="About">
+				<img id="b2" src="me.jpg" alt="portret"> 	
+			<div id="bio"><h2>About</h2>
+					<p>Trenutno na intenzivnom šestomesečnom kursu Front End programiranja u Com Trade IT 
+						(Code Academy) školi. Kurs obuhvata HTML,CSS, JavaScript, Bootstrap i srodne oblasti.
+						Diplomirala na Fakultetu Političkih Nauka 2006. godine u roku, a završila i 
+						 master na FPN smer Javna Uprava i Lokalna samouprava 2009. godine sa prosečnom 
+						 ocenom 10.00. Iste godine upisala i doktorske studije na tom fakultetu i trenutno 
+						 piše doktorsku tezu.
+						 2016 -  Svet Kompjutera (Politika A.D.) radi kao stručni saradnik u rubrici Test Run koja je
+							posvećena aktuelnom softveru. Zadužena za testiranje svih vrsta softvera (grafički, tekstualni,
+							 audio, multimedija itd) i pisanje tekstova o testiranom softveru namenjenog čitaocima Sveta 
+							 Kompjutera. Do sada objavljene tekstove u ovoj rubrici (njih preko 180) možete pronaći na 
+							 sledećem linku https://www.sk.rs/indexes/sections/tr.html
+							Sem testiranja softvera objavljeno je i nekoliko tekstova u rubrici „Na licu mesta“ gde je 
+							izveštavala sa različitih IT konferencija.
+					 </p>
+			</div>
+		</div>
+
+		<div id="Contact">
+			<div id="podaci">
+				Contact: <br><br><br>
+				Gordana Radovic <br><br>
+				Mail: gordana.ss@gmail.com<br><br>
+				Phone: 0603229659
+			</div>
+			<div id="forma">
+				<p><b>Posaljite poruku:</b><p><br>
+
+				<p>Ime i Prezime: <br>
+				</p>
+
+				<input type="text" name="ime" value="" />
+
+				<p id="tekst">Tekst Poruke</p><br>
+
+				<textarea rows="9" cols="50" name="Komentar"></textarea>
+				<br>
+				<input type="submit" value="Posalji" />
+				
+			</div>
+		</div>
+
+		<script> 
+			window.addEventListener('click', function(){
+
+				var playPromise = document.querySelector('video').play();
+
+					if (playPromise !== undefined) {
+					playPromise.then(function() {
+					
+					}).catch(function(error) {
+
+					});
+}
+			})
+
+var korpa = [];
+
+
+
+
+
+			</script>
+
+
+
+    </body>
+
+</html>
